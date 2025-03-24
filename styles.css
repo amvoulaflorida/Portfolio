@@ -5,6 +5,8 @@
   justify-content: center;
   align-items: center;
   background: url('images/moi1.jpg') center/cover no-repeat; /* Image de fond */
+  background-size: cover; /* S'assure que l'image prend toute la surface de l'écran */
+  background-position: center; 
 }
 #about::before {
   content: "";
@@ -21,19 +23,27 @@
 .container {
   position: relative;
   z-index: 2; /* Met le contenu au-dessus du flou */
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 .profile-container {
   display: flex;
   align-items: center;
   justify-content: space-between; /* Espace entre l'image et le texte */
-  width: 80%; /* Ajuster la largeur du conteneur */
+  width: 100%; /* Ajuster la largeur du conteneur */
   max-width: 1200px; /* Limiter la largeur du conteneur */
+  gap: 20px;
+  flex-wrap: wrap; /* Permet à l'image et au texte de s'ajuster sur des écrans plus petits */
 }
 
 .profile-img {
+  
   position: relative;
   flex: 1; /* Pour que l'image occupe une partie de l'espace */
   padding-right: 20px;
+  max-width: 300px;
+  margin-right: 20px;
 }
 
 .profile-img img {
@@ -58,7 +68,109 @@
   max-width: 700px; /* Limite la largeur du texte */
   box-sizing: border-box; /* Prendre en compte le padding dans la largeur */
 }
+/* Média Query pour les écrans de taille moyenne (tablettes) */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Réduire la taille du texte */
+  }
 
+  header nav ul {
+    display: block;
+    text-align: center;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-img img {
+    width: 70%;
+    margin: 20px 0;
+  }
+
+  .profile-text {
+    width: 100%;
+    padding: 20px;
+  }
+
+  #about {
+    background-size: cover;
+    background-position: top center;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 480px) {
+  body {
+    font-size: 12px; /* Taille plus petite pour les mobiles */
+  }
+
+  header nav ul {
+    font-size: 12px; /* Ajuster la taille du texte du menu */
+  }
+
+  .profile-img img {
+    width: 60%;
+    height: auto;
+  }
+
+  .profile-text {
+    font-size: 12px; /* Réduire la taille du texte */
+  }
+}
+
+/* Style des autres sections comme les compétences, expériences, etc. */
+.skills-list,
+.languages-list,
+.hobbies-list,
+.certifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.skill-item,
+.certification-item,
+.language-item,
+.hobby-item {
+  flex: 1 1 22%;
+  margin-bottom: 20px;
+  padding: 25px;
+  background-color: #34495E;
+  color: #F4D03F;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover,
+.certification-item:hover,
+.language-item:hover,
+.hobby-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(189, 195, 199, 0.2);
+}
+
+@media (max-width: 768px) {
+  .skill-item,
+  .certification-item,
+  .language-item,
+  .hobby-item {
+    flex: 1 1 48%; /* Deux éléments par ligne sur tablette */
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-item,
+  .certification-item,
+  .language-item,
+  .hobby-item {
+    flex: 1 1 100%; /* Un seul élément par ligne sur mobile */
+  }
+}
+  
 .profile-text h2 {
   margin-bottom: 20px;
 }
