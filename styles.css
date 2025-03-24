@@ -99,96 +99,89 @@
     background-position: top center;
   }
 }
-
-/* Mobiles */
+/* Pour les écrans de petite taille (mobile) */
 @media (max-width: 480px) {
+  /* Réduire la taille du texte */
   body {
-    font-size: 12px; /* Taille plus petite pour les mobiles */
+    font-size: 12px;
   }
 
   header nav ul {
-    font-size: 12px; /* Ajuster la taille du texte du menu */
+    font-size: 12px; /* Taille réduite pour le menu */
   }
 
   .profile-img img {
-    width: 60%;
+    width: 60%; /* Réduit l'image sur mobile */
     height: auto;
   }
 
   .profile-text {
-    font-size: 12px; /* Réduire la taille du texte */
+    font-size: 12px;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Rendre la section plus compacte */
+  #about {
+    background-size: cover;
+    background-position: top center;
+  }
+
+  /* Réduire la taille des éléments de compétence et autres éléments */
+  .skill-item,
+  .certification-item,
+  .language-item,
+  .hobby-item {
+    flex: 1 1 100%;  /* Un seul élément par ligne sur mobile */
+  }
+
+  /* Ajuster les liens et icônes */
+  .contact-info a {
+    font-size: 14px;
   }
 }
 
-/* Style des autres sections comme les compétences, expériences, etc. */
-.skills-list,
+
+@media (max-width: 768px) {
+  /* Simplifier le menu en un bloc sur mobile */
+  header nav ul {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  header nav ul li {
+    margin: 10px 0;  /* Espacer les éléments du menu */
+  }
+}
+
+@media (max-width: 480px) {
+  header nav ul li a {
+    font-size: 12px; /* Réduit la taille du texte du menu */
+    margin: 0; /* Supprime l'espacement horizontal entre les éléments */
+  }
+
+  .skills-list,
+.certifications-list,
 .languages-list,
-.hobbies-list,
-.certifications-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
+.hobbies-list {
+  flex-wrap: wrap; /* Permet aux éléments de passer sur la ligne suivante */
+  justify-content: center; /* Centre les éléments */
 }
 
 .skill-item,
 .certification-item,
 .language-item,
 .hobby-item {
-  flex: 1 1 22%;
-  margin-bottom: 20px;
-  padding: 25px;
-  background-color: #34495E;
-  color: #F4D03F;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 100%; /* Un seul élément par ligne */
+  margin-bottom: 15px;
 }
 
-.skill-item:hover,
-.certification-item:hover,
-.language-item:hover,
-.hobby-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 25px rgba(189, 195, 199, 0.2);
 }
 
-@media (max-width: 768px) {
-  .skill-item,
-  .certification-item,
-  .language-item,
-  .hobby-item {
-    flex: 1 1 48%; /* Deux éléments par ligne sur tablette */
-  }
-}
-
-@media (max-width: 480px) {
-  .skill-item,
-  .certification-item,
-  .language-item,
-  .hobby-item {
-    flex: 1 1 100%; /* Un seul élément par ligne sur mobile */
-  }
-}
-  
-.profile-text h2 {
-  margin-bottom: 20px;
-}
-
-.highlight-text {
-  color: #F4D03F; /* Accent de couleur or pour le texte mis en valeur */
-}
-
-.contact-info a {
-  display: block;
-  margin-top: 10px;
-  color: #F4D03F; /* Or métallique pour le texte */
-  text-decoration: none;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
 /*################################################*/
 
 
