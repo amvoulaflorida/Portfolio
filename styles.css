@@ -1,0 +1,567 @@
+#about {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('images/moi1.jpg') center/cover no-repeat; /* Image de fond */
+}
+#about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Couleur sombre semi-transparente */
+  backdrop-filter: blur(8px); /* Applique un flou */
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 2; /* Met le contenu au-dessus du flou */
+}
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Espace entre l'image et le texte */
+  width: 80%; /* Ajuster la largeur du conteneur */
+  max-width: 1200px; /* Limiter la largeur du conteneur */
+}
+
+.profile-img {
+  position: relative;
+  flex: 1; /* Pour que l'image occupe une partie de l'espace */
+  padding-right: 20px;
+}
+
+.profile-img img {
+  width: 300px; /* Taille de l'image */
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover; /* Assure que l'image reste bien dans un cercle */
+  /* Enlever le flou ici */
+  transition: transform 0.3s ease; /* Transition pour un effet de zoom lors du survol */
+}
+
+.profile-img:hover img {
+  transform: scale(1.05); /* Légère animation de zoom lorsque l'on survole l'image */
+}
+
+.profile-text {
+  flex: 2; /* Le texte occupe plus d'espace */
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond sombre semi-transparent */
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 700px; /* Limite la largeur du texte */
+  box-sizing: border-box; /* Prendre en compte le padding dans la largeur */
+}
+
+.profile-text h2 {
+  margin-bottom: 20px;
+}
+
+.highlight-text {
+  color: #F4D03F; /* Accent de couleur or pour le texte mis en valeur */
+}
+
+.contact-info a {
+  display: block;
+  margin-top: 10px;
+  color: #F4D03F; /* Or métallique pour le texte */
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+/*################################################*/
+
+
+/* Réinitialisation de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #1C1C1C; /* Gris foncé (un fond luxueux et sobre) */
+  color: #F4D03F; /* Or métallique (couleur principale du texte) */
+  line-height: 1.7;
+  padding-top: 80px;
+}
+
+/* Header */
+header {
+  background-color: #2C3E50; /* Bleu métallique nuit (un fond plus riche) */
+  color: #F4D03F; /* Or métallique */
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-bottom: 3px solid #F7E7CE;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Titre dans le header */
+header h1 {
+  font-size: 15px;  /* Réduit la taille du texte */
+  font-weight: 600;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+
+header nav ul li {
+  margin-left: 25px;
+}
+
+header nav ul li a {
+  color: #F4D03F; /* Or métallique */
+  text-decoration: none;
+  font-size: 14px;  /* Réduit la taille du texte du menu */
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header nav ul li a:hover {
+  color: #BDC3C7; /* Argent métallique (un effet subtil au survol) */
+  transform: translateY(-3px);
+}
+
+/* Sections générales */
+section {
+  padding: 80px 0;
+  margin-top: 80px;
+  border-bottom: 1px solid #e1e1e1;
+  
+}
+
+.container {
+  width: 85%;
+  margin: 0 auto;
+  
+  
+
+}
+
+/* Titres des sections */
+.section-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #F4D03F; /* Or métallique */
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #4f56b6;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+}
+
+Profil
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.profile-img img {
+  width: 290px;  /* Augmenter la taille de l'image */
+  height: 350px;
+  border-radius: 100%;
+  object-fit: cover;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-info a {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #F4D03F; /* Or métallique (couleur principale du texte) */
+  
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.profile-text h2 {
+  font-size: 22px;
+  color: #4f56b6;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+#competences .skill-item {
+  background-color: #34495E; /* Gris métallique foncé */
+  color: #F4D03F; /* Or métallique */
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Ombre subtile pour un effet raffiné */
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+
+
+/* Card Design pour Education, Compétences, Projets, Expériences, Langues, Loisirs, Certifications, Soft Skills */
+.card {
+  background-color: #34495E; /* Gris métallique foncé (un fond sophistiqué) */
+  color: #F4D03F; /* Or métallique */
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(189, 195, 199, 0.3); /* Ombre argentée métallique */
+}
+
+/* Compétences */
+
+.skills-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.skill-item {
+  width: 22%;
+  background-color: #fff;
+  color: #F7E7CE; /* Or champagne */
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.skill-item h3 {
+  font-size: 20px;
+  color: #F4D03F; /* Or métallique */
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.skill-item p {
+  font-size: 16px;
+  color: #BDC3C7; /* Argent métallique doux */
+}
+
+/* Certifications */
+.certifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+
+.certification-item {
+  background-color: #F4D03F; /* Gris métallique foncé */
+  
+  
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.certification-item h3 {
+  font-size: 18px;
+  color:  #34495E;
+  font-weight: 600;
+}
+
+/* Langues, Soft Skills, Loisirs */
+
+.languages-list,
+.soft-skills-list,
+.hobbies-list {
+  list-style: none;
+  padding: 0;
+  font-size: 18px;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.languages-list li,
+.soft-skills-list li,
+.hobbies-list li {
+  margin-bottom: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  background-color: #2C3E50; /* Bleu métallique foncé */
+  color: #F4D03F; /* Or métallique */
+  text-align: center;
+  padding: 20px 0;
+}
+
+footer p {
+  font-size: 16px;
+}
+
+/* Formulaire de contact */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact input,
+.contact textarea {
+  width: 80%;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #4f56b6;
+}
+
+.contact button {
+  padding: 15px 30px;
+  background-color: #BDC3C7; /* Argent métallique */
+  color: #1C1C1C; /* Noir profond */
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact button:hover {
+  background-color: #F4D03F; /* Or métallique */
+  transform: translateY(-3px);
+}
+/* Langues et Soft Skills */
+.languages-list,
+.soft-skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.languages-list li,
+.soft-skills-list li {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.languages-list li:hover,
+.soft-skills-list li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.languages-list li h3,
+.soft-skills-list li h3 {
+  font-size: 18px;
+  color: #4f56b6;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.languages-list li p,
+.soft-skills-list li p {
+  font-size: 16px;
+  color: #777;
+}
+/* Loisirs */
+.hobbies-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.hobbies-list li {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.hobbies-list li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.hobbies-list li h3 {
+  font-size: 18px;
+  color: #4f56b6;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hobbies-list li p {
+  font-size: 16px;
+  color: #777;
+}
+/* Education */
+.education-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.education-item {
+  display: flex;
+  align-items: center;
+  background-color: #34495E;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+.education-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.education-item .education-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.education-item .education-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.education-item h3 {
+  font-size: 20px;
+  color: #F4D03F;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.education-item p {
+  font-size: 16px;
+  color: blanchedalmond;
+}
+/* Enlever le soulignement des liens */
+a {
+  text-decoration: none;
+  color: #F4D03F; /* Or métallique */
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #BDC3C7; /* Argent métallique */
+}
+
+
+.experience-item {
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: #34495E;
+  margin-bottom: 20px;
+}
+
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.company-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+.profile-text h2 {
+  font-size: 15px; /* Taille réduite */
+  color: white; /* Couleur mise en avant */
+}
+
+.highlight-text {
+  color: #F4D03F; /* Or métallique (couleur principale du texte) */
+  font-size: 14px; /* Taille réduite */
+    font-weight: lighter;
+}
+
+.card:hover,
+.skill-item:hover,
+.experience-item:hover,
+.education-item:hover {
+  box-shadow: 0 8px 25px rgba(189, 195, 199, 0.2); /* Ombre argentée */
+}
